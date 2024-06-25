@@ -17,9 +17,11 @@ public class JpaMain {
         tx.begin();
         try{
             //insert
+            //준영속상태
             Member member = new Member();
             member.setId(1L);
             member.setName("HelloA");
+            //영속상태
             em.persist(member);
 
 
