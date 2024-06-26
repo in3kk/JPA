@@ -18,30 +18,49 @@ public class JpaMain {
         try{
             //insert
             //준영속상태
-            Member member = new Member();
-            member.setId(1L);
-            member.setName("HelloA");
-            //영속상태
-            em.persist(member);
+//            Member member = new Member();
+//            member.setId(101L);
+//            member.setName("HelloJPA");
+//
+//            //영속상태
+//            em.persist(member);
+
 
 
             //select
-            Member findMember = em.find(Member.class,1L);
-            System.out.println(findMember.getId()+" : "+findMember.getName());
-
-            //update
-            findMember.setName("helloB");
-
-            //delete
-            em.remove(findMember);
+//            Member findMember = em.find(Member.class,1L);
+//            System.out.println(findMember.getId()+" : "+findMember.getName());
+//
+//            //update
+//            findMember.setName("helloB");
+//
+//            //delete
+//            em.remove(findMember);
 
             //JPQL > 객체지향 쿼리
-            List<Member> result = em.createQuery("select m from Member as m", Member.class)
-                    .setFirstResult(1)//페이징에 유리하다.
-                    .setMaxResults(10)
-                    .getResultList();
+//            List<Member> result = em.createQuery("select m from Member as m", Member.class)
+//                    .setFirstResult(1)//페이징에 유리하다.
+//                    .setMaxResults(10)
+//                    .getResultList();
 
-            tx.commit();
+            //1차 캐시 테스트
+//            Member findMember2 = em.find(Member.class,101L);
+//            Member findMember3 = em.find(Member.class,101L);
+//
+//            System.out.println("findMember = "+ (findMember3==findMember2));
+//
+//            Member member2 = new Member(150L,"A");
+//            Member member3 = new Member(160L,"B");
+//            em.persist(member2);
+//            em.persist(member3);
+//            System.out.println("-=========================");
+//            Member member4 = em.find(Member.class,160L);
+//            member4.setName("faker");
+//            Member member4 = em.find(Member.class,160L);
+////            em.detach(member4);
+//            em.clear();
+//            Member member5 = em.find(Member.class,160L);
+//            tx.commit();
         }catch (Exception e){
             tx.rollback();
         }finally {
