@@ -19,7 +19,6 @@ public class Member {
     private Date lastModifiedDate;
     @Lob
     private String description;
-
     Member(){
 
     }
