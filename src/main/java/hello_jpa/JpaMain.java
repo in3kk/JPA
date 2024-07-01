@@ -79,20 +79,44 @@ public class JpaMain {
 //            em.persist(member);
 //            System.out.println("******");
             //allocationSize
-            Member member1 = new Member();
-            member1.setUsername("A");
-            Member member2 = new Member();
-            member2.setUsername("B");
-            Member member3 = new Member();
-            member3.setUsername("C");
-            System.out.println("******");
-            em.persist(member1);
-            em.persist(member2);
-            em.persist(member3);
-            System.out.println("member1 = "+member1.getId());
-            System.out.println("member2 = "+member2.getId());
-            System.out.println("member3 = "+member3.getId());
-            System.out.println("******");
+//            Member member1 = new Member();
+//            member1.setUsername("A");
+//            Member member2 = new Member();
+//            member2.setUsername("B");
+//            Member member3 = new Member();
+//            member3.setUsername("C");
+//            System.out.println("******");
+//            em.persist(member1);
+//            em.persist(member2);
+//            em.persist(member3);
+//            System.out.println("member1 = "+member1.getId());
+//            System.out.println("member2 = "+member2.getId());
+//            System.out.println("member3 = "+member3.getId());
+//            System.out.println("******");
+
+            //단반향 연관관계 테스트
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
+
+            Member member = new Member();
+            member.setUsername("member1");
+            member.setTeam(team);
+            em.persist(member);
+            em.flush();
+            em.clear();
+//            Member findMember = em.find(Member.class,member.getId());
+//            Team findTeam = findMember.getTeam();
+//            System.out.println("findTeam ="+findTeam.getName());
+//
+//            Team newTeam = em.find(Team.class,100L);
+//            findMember.setTeam(newTeam);
+
+            Member findMember2 = em.find(Member.class,member.getId());
+            List<Member> members = findMember2.getTeam().getMembers();
+            for(Member m : members){
+                System.out.println("m = "+m.getUsername());
+            }
             tx.commit();
         }catch (Exception e){
             tx.rollback();

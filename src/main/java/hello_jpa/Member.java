@@ -18,10 +18,15 @@ import java.util.Date;
 )
 public class Member {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "member_seq_generator")
+    @GeneratedValue
     private Long id;
-    @Column(name = "name")
+    @Column(name = "username")
     private String username;
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+//    @Column(name = "team_id")
+//    private Long teamid;
 //    private Integer age;
 //    @Enumerated(EnumType.STRING)
 //    private RoleType roleType;
@@ -43,6 +48,23 @@ public class Member {
         this.id = id;
     }
 
+//    public Long getTeamid() {
+//        return teamid;
+//    }
+//
+//    public void setTeamid(Long teamid) {
+//        this.teamid = teamid;
+//    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    //
     public String getUsername() {
         return username;
     }
