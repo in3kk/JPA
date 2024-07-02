@@ -1,23 +1,28 @@
 package jpabook.jpashop.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 
-//@Entity
+import javax.persistence.*;
+
+@Entity
 public class OrderItem {
 
     @Id @GeneratedValue
     @Column(name = "ORDER_ITEM_ID")
     private Long id;
 
-    @Column(name = "ORDER_ID")
-    private Long orderId;
+//    @Column(name = "ORDER_ID")
+//    private Long orderId;
 
     @Column(name = "ITEM_ID")
     private Long itemId;
+    @ManyToOne
+    @JoinColumn(name = "ORDER_ID")
+    private Order order;
 
+    @ManyToOne
+    @JoinColumn(name = "ITEM_ID")
+    private item item;
     private int orderPrice;
     private int count;
 
@@ -29,13 +34,28 @@ public class OrderItem {
         this.id = id;
     }
 
-    public Long getOrderId() {
-        return orderId;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
+    public void setOrder(Order order) {
+        this.order = order;
     }
+
+    public jpabook.jpashop.domain.item getItem() {
+        return item;
+    }
+
+    public void setItem(jpabook.jpashop.domain.item item) {
+        this.item = item;
+    }
+//    public Long getOrderId() {
+//        return orderId;
+//    }
+//
+//    public void setOrderId(Long orderId) {
+//        this.orderId = orderId;
+//    }
 
     public Long getItemId() {
         return itemId;

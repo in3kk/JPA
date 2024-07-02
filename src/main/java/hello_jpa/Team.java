@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+//@Entity
 public class Team {
     @Id
     @GeneratedValue
@@ -13,6 +13,11 @@ public class Team {
     @Column(name = "NAME")
     private String name;
 
+
+    public void addMember(Member member){
+        member.setTeam(this);
+        members.add(member);
+    }
     public List<Member> getMembers() {
         return members;
     }

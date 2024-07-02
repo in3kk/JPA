@@ -5,7 +5,7 @@ import org.hibernate.annotations.GeneratorType;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
+//@Entity
 //@TableGenerator(
 //        name = "member_seq_generator",
 //        table = "my_sequences",
@@ -58,6 +58,11 @@ public class Member {
 
     public Team getTeam() {
         return team;
+    }
+
+    public void changeTeam(Team team) {
+        this.team = team;
+        team.getMembers().add(this);
     }
 
     public void setTeam(Team team) {

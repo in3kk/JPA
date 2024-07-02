@@ -95,13 +95,27 @@ public class JpaMain {
 //            System.out.println("******");
 
             //단반향 연관관계 테스트
+//            Team team = new Team();
+//            team.setName("TeamA");
+//
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            member.setTeam(team);
+//            em.persist(member);
+//            em.flush();
+//            em.clear();
+
+            //양방향 연관관계에서 자주 하는 실수 > mappedBy로 매핑된 테이블은 상대 테이블에 값을 추가해야 한다.
             Team team = new Team();
             team.setName("TeamA");
+
             em.persist(team);
 
             Member member = new Member();
             member.setUsername("member1");
-            member.setTeam(team);
+            member.changeTeam(team);
             em.persist(member);
             em.flush();
             em.clear();
@@ -112,11 +126,11 @@ public class JpaMain {
 //            Team newTeam = em.find(Team.class,100L);
 //            findMember.setTeam(newTeam);
 
-            Member findMember2 = em.find(Member.class,member.getId());
-            List<Member> members = findMember2.getTeam().getMembers();
-            for(Member m : members){
-                System.out.println("m = "+m.getUsername());
-            }
+//            Member findMember2 = em.find(Member.class,member.getId());
+//            List<Member> members = findMember2.getTeam().getMembers();
+//            for(Member m : members){
+//                System.out.println("m = "+m.getUsername());
+//            }
             tx.commit();
         }catch (Exception e){
             tx.rollback();
