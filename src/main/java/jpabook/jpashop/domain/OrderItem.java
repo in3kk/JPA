@@ -14,8 +14,8 @@ public class OrderItem {
 //    @Column(name = "ORDER_ID")
 //    private Long orderId;
 
-    @Column(name = "ITEM_ID")
-    private Long itemId;
+//    @Column(name = "ITEM_ID")
+//    private Long itemId;
     @ManyToOne
     @JoinColumn(name = "ORDER_ID")
     private Order order;
@@ -57,13 +57,13 @@ public class OrderItem {
 //        this.orderId = orderId;
 //    }
 
-    public Long getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
-    }
+//    public Long getItemId() {
+//        return itemId;
+//    }
+//
+//    public void setItemId(Long itemId) {
+//        this.itemId = itemId;
+//    }
 
     public int getOrderPrice() {
         return orderPrice;

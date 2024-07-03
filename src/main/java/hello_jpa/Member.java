@@ -3,7 +3,9 @@ package hello_jpa;
 import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 //@Entity
 //@TableGenerator(
@@ -22,9 +24,16 @@ public class Member {
     private Long id;
     @Column(name = "username")
     private String username;
-    @ManyToOne
-    @JoinColumn(name = "TEAM_ID")
-    private Team team;
+    @ManyToMany
+    @JoinTable(name = "MEMBER_PRODUCT")
+    private List<Product> products = new ArrayList<>();
+
+    @OneToOne
+    @JoinColumn(name="LOCKER_ID")
+    private Locker locker;
+//    @ManyToOne
+//    @JoinColumn(name = "TEAM_ID")
+//    private Team team;
 //    @Column(name = "team_id")
 //    private Long teamid;
 //    private Integer age;
@@ -56,18 +65,18 @@ public class Member {
 //        this.teamid = teamid;
 //    }
 
-    public Team getTeam() {
-        return team;
-    }
+//    public Team getTeam() {
+//        return team;
+//    }
+//
+//    public void changeTeam(Team team) {
+//        this.team = team;
+//        team.getMembers().add(this);
+//    }
 
-    public void changeTeam(Team team) {
-        this.team = team;
-        team.getMembers().add(this);
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
-    }
+//    public void setTeam(Team team) {
+//        this.team = team;
+//    }
 
     //
     public String getUsername() {

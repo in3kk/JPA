@@ -12,12 +12,14 @@ public class Team {
     private Long teamId;
     @Column(name = "NAME")
     private String name;
+    @OneToMany
+    @JoinColumn(name = "TEAM_ID")
+    private List<Member> members = new ArrayList<>();
 
-
-    public void addMember(Member member){
-        member.setTeam(this);
-        members.add(member);
-    }
+//    public void addMember(Member member){
+//        member.setTeam(this);
+//        members.add(member);
+//    }
     public List<Member> getMembers() {
         return members;
     }
@@ -26,8 +28,9 @@ public class Team {
         this.members = members;
     }
 
-    @OneToMany(mappedBy = "team")//조인된 상대 테이블의 컬럼명
-    private List<Member> members = new ArrayList<>();
+//    @OneToMany(mappedBy = "team")//조인된 상대 테이블의 컬럼명
+
+
     public String getName() {
         return name;
     }

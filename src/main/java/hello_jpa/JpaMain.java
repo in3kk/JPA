@@ -108,17 +108,17 @@ public class JpaMain {
 //            em.clear();
 
             //양방향 연관관계에서 자주 하는 실수 > mappedBy로 매핑된 테이블은 상대 테이블에 값을 추가해야 한다.
-            Team team = new Team();
-            team.setName("TeamA");
-
-            em.persist(team);
-
-            Member member = new Member();
-            member.setUsername("member1");
-            member.changeTeam(team);
-            em.persist(member);
-            em.flush();
-            em.clear();
+//            Team team = new Team();
+//            team.setName("TeamA");
+//
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            member.changeTeam(team);
+//            em.persist(member);
+//            em.flush();
+//            em.clear();
 //            Member findMember = em.find(Member.class,member.getId());
 //            Team findTeam = findMember.getTeam();
 //            System.out.println("findTeam ="+findTeam.getName());
@@ -131,6 +131,18 @@ public class JpaMain {
 //            for(Member m : members){
 //                System.out.println("m = "+m.getUsername());
 //            }
+
+            //1:N 단방향(1이 주인) 일때 테스트
+            Member member = new Member();
+            member.setUsername("member1");
+
+            em.persist(member);
+
+            Team team = new Team();
+            team.setName("teamA");
+            team.getMembers().add(member);
+
+            em.persist(team);
             tx.commit();
         }catch (Exception e){
             tx.rollback();
