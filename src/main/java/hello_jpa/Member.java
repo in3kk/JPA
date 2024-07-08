@@ -3,11 +3,12 @@ package hello_jpa;
 import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-//@Entity
+@Entity
 //@TableGenerator(
 //        name = "member_seq_generator",
 //        table = "my_sequences",
@@ -18,19 +19,21 @@ import java.util.List;
         sequenceName = "member_seq",
         initialValue = 1, allocationSize = 50
 )
-public class Member {
+public class Member extends BaseEntity{
     @Id
     @GeneratedValue
     private Long id;
     @Column(name = "username")
     private String username;
-    @ManyToMany
-    @JoinTable(name = "MEMBER_PRODUCT")
-    private List<Product> products = new ArrayList<>();
+//    @ManyToMany
+//    @JoinTable(name = "MEMBER_PRODUCT")
+//    private List<Product> products = new ArrayList<>();
+//
+//    @OneToOne
+//    @JoinColumn(name="LOCKER_ID")
+//    private Locker locker;
 
-    @OneToOne
-    @JoinColumn(name="LOCKER_ID")
-    private Locker locker;
+
 //    @ManyToOne
 //    @JoinColumn(name = "TEAM_ID")
 //    private Team team;

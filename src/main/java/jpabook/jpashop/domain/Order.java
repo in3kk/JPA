@@ -5,8 +5,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "ORDERS")
-public class Order {
+//@Entity(name = "ORDERS")
+public class Order extends BaseEntity{
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ORDER_ID")
     private Long id;

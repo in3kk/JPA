@@ -4,7 +4,7 @@ import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 
 import javax.persistence.*;
 
-@Entity
+//@Entity
 public class OrderItem {
 
     @Id @GeneratedValue

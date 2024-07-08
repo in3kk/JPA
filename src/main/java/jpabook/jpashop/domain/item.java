@@ -1,11 +1,15 @@
 package jpabook.jpashop.domain;
 
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-public class item {
+//@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn
+public abstract class item extends BaseEntity{
     @Id @GeneratedValue
     @Column(name = "ITEM_ID")
     private Long id;

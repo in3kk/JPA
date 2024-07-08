@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class JpaMain {
@@ -133,16 +134,54 @@ public class JpaMain {
 //            }
 
             //1:N 단방향(1이 주인) 일때 테스트
+//            Member member = new Member();
+//            member.setUsername("member1");
+//
+//            em.persist(member);
+//
+//            Team team = new Team();
+//            team.setName("teamA");
+//            team.getMembers().add(member);
+//
+//            em.persist(team);
+            //슈퍼/서브 상속관계 매핑 전략 테스트
+//            Movie movie = new Movie();
+//            movie.setDirector("a");
+//            movie.setActor("bbb");
+//            movie.setName("Notebook");
+//            movie.setPrice(10000);
+//            em.persist(movie);
+//            em.flush();
+//            em.clear();
+//            Movie findMove = em.find(Movie.class,movie.getId());
+//
+//            em.clear();
+//            Item item = em.find(Movie.class,movie.getId());
+//            System.out.println("findmovie:"+findMove);
+
+//            System.out.println("item:"+item);
+
+            //@MappedSuperClass 테스트
+//            Member member = new Member();
+//            member.setUsername("user1");
+//            member.setCreatedBy("kim");
+//            member.setCreatedDate(LocalDateTime.now());
+//            em.persist(member);
+//            em.flush();
+//            em.clear();
+
+            //프록시 테스트
+
             Member member = new Member();
-            member.setUsername("member1");
+            member.setUsername("hello");
 
             em.persist(member);
+            em.flush();
+            em.clear();
 
-            Team team = new Team();
-            team.setName("teamA");
-            team.getMembers().add(member);
-
-            em.persist(team);
+//            Member findMember = em.find(Member.class,member.getId());
+            Member findMember = em.getReference(Member.class,member.getId());
+            System.out.println(findMember.getId());
             tx.commit();
         }catch (Exception e){
             tx.rollback();
