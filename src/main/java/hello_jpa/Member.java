@@ -19,7 +19,7 @@ import java.util.List;
         sequenceName = "member_seq",
         initialValue = 1, allocationSize = 50
 )
-public class Member extends BaseEntity{
+public class Member {
     @Id
     @GeneratedValue
     private Long id;
@@ -34,9 +34,9 @@ public class Member extends BaseEntity{
 //    private Locker locker;
 
 
-//    @ManyToOne
-//    @JoinColumn(name = "TEAM_ID")
-//    private Team team;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn
+    private Team team;
 //    @Column(name = "team_id")
 //    private Long teamid;
 //    private Integer age;
@@ -80,6 +80,14 @@ public class Member extends BaseEntity{
 //    public void setTeam(Team team) {
 //        this.team = team;
 //    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
 
     //
     public String getUsername() {
