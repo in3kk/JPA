@@ -33,6 +33,22 @@ public class Member {
 //    @JoinColumn(name="LOCKER_ID")
 //    private Locker locker;
 
+    //기간 period
+    @Embedded
+    private Period workPeriod;
+    //주소 address
+    @Embedded
+    private Address homeAddress;
+//    @Embedded
+//    @AttributeOverrides({
+//            @AttributeOverride(name="city",
+//                column=@Column(name = "WORK_CITY")),
+//            @AttributeOverride(name="street",
+//                column = @Column(name="WORK_STREET")),
+//            @AttributeOverride(name="zipcode",
+//                column = @Column(name = "WORK_ZIPCODE"))
+//    })
+//    private Address workAddress;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn
@@ -51,6 +67,22 @@ public class Member {
 //    private Date lastModifiedDate;
 //    @Lob
 //    private String description;
+
+    public Period getWorkPeriod() {
+        return workPeriod;
+    }
+
+    public void setWorkPeriod(Period workPeriod) {
+        this.workPeriod = workPeriod;
+    }
+
+    public Address getHomeAddress() {
+        return homeAddress;
+    }
+
+    public void setHomeAddress(Address homeAddress) {
+        this.homeAddress = homeAddress;
+    }
 
     public Long getId() {
         return id;
