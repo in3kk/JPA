@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="813dd9e6-eb28-448f-bee4-3526d9ce1335" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Period.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/ValueMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Address.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Address.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/JpaMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Delivery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Address.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/JpaMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/JpaMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Member.class" afterDir="false" />
     </list>
@@ -78,7 +80,7 @@
       <recent name="F:\projects\JPA\src\main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ValueMain">
+  <component name="RunManager" selected="Application.JpaMain">
     <configuration name="JpaMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hello_jpa.JpaMain" />
       <module name="JPA" />
@@ -120,9 +122,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ValueMain" />
         <item itemvalue="Application.JpaMain" />
         <item itemvalue="Application.jpabook.jpashop.JpaMain" />
+        <item itemvalue="Application.ValueMain" />
         <item itemvalue="Application.JpaMain" />
       </list>
     </recent_temporary>

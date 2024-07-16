@@ -227,19 +227,41 @@ public class JpaMain {
 //            em.remove(findParent);
 
             //임베디드 타입 테스트
-            Address address = new Address("city","street","zipcode");
-
+//            Address address = new Address("city","street","zipcode");
+//
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            member.setHomeAddress(address);
+//            em.persist(member);
+////            member.setWorkPeriod(new Period());
+//            Address copyAddress = new Address(address.getCity(),address.getStreet(), address.getZipcode());
+//            Member member2 = new Member();
+//            member2.setUsername("member2");
+//            member2.setHomeAddress(copyAddress);
+//            em.persist(member2);
+//            member.getHomeAddress().setCity("newCity");
+            //
             Member member = new Member();
             member.setUsername("member1");
-            member.setHomeAddress(address);
+            member.setHomeAddress(new Address("homeCity","street","zipcode"));
+            member.getFavoriteFoods().add("치킨");
+            member.getFavoriteFoods().add("족발");
+            member.getFavoriteFoods().add("햄버거");
+            member.getAddressHistory().add(new Address("old1","street","zipcode"));
+            member.getAddressHistory().add(new Address("old2","street","zipcode"));
             em.persist(member);
-//            member.setWorkPeriod(new Period());
-            Address copyAddress = new Address(address.getCity(),address.getStreet(), address.getZipcode());
-            Member member2 = new Member();
-            member2.setUsername("member2");
-            member2.setHomeAddress(copyAddress);
-            em.persist(member2);
-            member.getHomeAddress().setCity("newCity");
+            em.flush();
+            em.clear();
+            System.out.println("===");
+            Member findMember = em.find(Member.class,member.getId());
+            Address a = findMember.getHomeAddress();
+            findMember.setHomeAddress(new Address("newCity", a.getStreet(),a.getZipcode()));
+            //String 이기 때문에 수정하는게 아닌 삭제후 추가 해야함
+            findMember.getFavoriteFoods().remove("치킨");
+            findMember.getFavoriteFoods().add("한식");
+
+            findMember.getAddressHistory().remove(new Address("old1","street","zipcode"));
+            findMember.getAddressHistory().add(new Address("new1","street","zipcode"));
 
             tx.commit();
         }catch (Exception e){
