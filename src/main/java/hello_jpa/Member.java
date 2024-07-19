@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.*;
 
-@Entity
+//@Entity
 //@TableGenerator(
 //        name = "member_seq_generator",
 //        table = "my_sequences",

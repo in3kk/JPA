@@ -5,16 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="813dd9e6-eb28-448f-bee4-3526d9ce1335" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jpql/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jpql/JpaMainJPQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jpql/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jpql/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jpql/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jpql/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Child.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/JpaMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Delivery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Parent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Parent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Period.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Period.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello_jpa/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello_jpa/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Address.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Album.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Album.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Child.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Child.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Item.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/JpaMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/JpaMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Member.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Parent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Parent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Period.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Period.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello_jpa/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello_jpa/Team.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,22 +78,25 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/projects/JPA&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDK Location&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "F:/projects/JPA/src/main/java",
+    "project.structure.last.edited": "SDK Location",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="jpabook.jpashop.domain" />
       <recent name="hello_jpa" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\projects\JPA\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\projects\JPA" />
@@ -80,13 +106,26 @@
       <recent name="F:\projects\JPA\src\main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JpaMain">
+  <component name="RunManager" selected="Application.JpaMainJPQL">
     <configuration name="JpaMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hello_jpa.JpaMain" />
       <module name="JPA" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="hello_jpa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JpaMainJPQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jpql.JpaMainJPQL" />
+      <module name="JPA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jpql.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,6 +161,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JpaMainJPQL" />
         <item itemvalue="Application.JpaMain" />
         <item itemvalue="Application.jpabook.jpashop.JpaMain" />
         <item itemvalue="Application.ValueMain" />

@@ -2,7 +2,7 @@ package hello_jpa;
 
 import javax.persistence.*;
 
-@Entity
+//@Entity
 public class Child {
     @Id
     @GeneratedValue

@@ -1,20 +1,19 @@
-package hello_jpa;
+package jpql;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Entity
-public class Product {
-
+@Entity
+public class Team {
     @Id @GeneratedValue
     private Long id;
     private String name;
-//    @ManyToMany(mappedBy = "products")
-//    private List<Member> members = new ArrayList<>();
+    @OneToMany(mappedBy = "team")
+    private List<Member> members = new ArrayList<>();
     public Long getId() {
         return id;
     }

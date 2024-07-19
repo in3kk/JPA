@@ -1,18 +1,16 @@
-package hello_jpa;
+package jpql;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-//@Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)//슈퍼/서브관계매핑 전략 설정
-@DiscriminatorColumn//dtype 추가
-public abstract class Item {
-
-
+@Entity
+public class Product {
     @Id @GeneratedValue
     private Long id;
-
     private String name;
     private int price;
+    private int stockAmount;
 
     public Long getId() {
         return id;
@@ -36,5 +34,13 @@ public abstract class Item {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public int getStockAmount() {
+        return stockAmount;
+    }
+
+    public void setStockAmount(int stockAmount) {
+        this.stockAmount = stockAmount;
     }
 }

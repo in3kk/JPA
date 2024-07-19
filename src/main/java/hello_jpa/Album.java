@@ -3,7 +3,7 @@ package hello_jpa;
 
 import javax.persistence.Entity;
 
-@Entity
+//@Entity
 public class Album extends Item{
 
     private String artist;
