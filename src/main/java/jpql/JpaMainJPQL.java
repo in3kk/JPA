@@ -3,6 +3,7 @@ package jpql;
 
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
 public class JpaMainJPQL {
@@ -15,17 +16,31 @@ public class JpaMainJPQL {
 
         tx.begin();
         try{
-            Team team = new Team();
-            team.setName("teamA");
-            em.persist(team);
+            Team teamA = new Team();
+            teamA.setName("teamA");
+            em.persist(teamA);
+            Team teamB = new Team();
+            teamB.setName("teamB");
+            em.persist(teamB);
 
             Member member = new Member();
-            member.setUsername("관리자");
-            member.setAge(10);
-            member.setTeam(team);
-            member.setType(MemberType.ADMIN);
+            member.setUsername("회원1");
+//            member.setAge(10);
+            member.setTeam(teamA);
+//            member.setType(MemberType.ADMIN);
+
+            Member member2 = new Member();
+            member2.setUsername("회원2");
+            member2.setTeam(teamA);
+
+            Member member3 = new Member();
+            member3.setUsername("회원3");
+            member3.setTeam(teamB);
+
 
             em.persist(member);
+            em.persist(member2);
+            em.persist(member3);
 //            for(int i = 100; i >0; i--){
 //                Member member = new Member();
 //                member.setUsername("member"+i);
@@ -112,12 +127,33 @@ public class JpaMainJPQL {
 //                System.out.println("result : "+i);
 //            }
             //jpql 기본 함수
-            String query = "select locate('de', 'abcdefg') from Member m";
-
-            List<String> result = em.createQuery(query, String.class).getResultList();
-            for(String i : result){
-                System.out.println("result : "+i);
+//            String query = "select locate('de', 'abcdefg') from Member m";
+//
+//            List<String> result = em.createQuery(query, String.class).getResultList();
+//            for(String i : result){
+//                System.out.println("result : "+i);
+//            }
+//            String query = "select m.team from Member m";
+            //경로 표현식
+//            String query = "select t.members from Team t";
+//            Collection result = em.createQuery(query, Collection.class).getResultList();
+//            for(Object s : result){
+//                System.out.println("o = "+s);
+//            }
+            //명시적 조인을 통한 컬렉션 값 연관 경로의 탐색
+//            String query = "select m.username from Team t join t.members m";
+//            List<Collection> result = em.createQuery(query, Collection.class).getResultList();
+//            System.out.println("result = "+result);
+            //페치 조인 테스트
+            //회원1, 팀A(SQL)  회원2, 팀A(1차캐시)  회원3, 팀B(SQL) 회원 100명 -> n+1 페치조인 미적용
+//            String query = "select m from Member m";
+            String query = "select m from Member m join fetch m.team";
+            List<Member> result = em.createQuery(query,Member.class)
+                            .getResultList();
+            for(Member member1 : result){
+                System.out.println("member = "+member1.getUsername()+","+member1.getTeam().getName());
             }
+
             tx.commit();
         }catch (Exception e){
             tx.rollback();
