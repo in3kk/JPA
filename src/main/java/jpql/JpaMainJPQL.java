@@ -147,13 +147,31 @@ public class JpaMainJPQL {
             //페치 조인 테스트
             //회원1, 팀A(SQL)  회원2, 팀A(1차캐시)  회원3, 팀B(SQL) 회원 100명 -> n+1 페치조인 미적용
 //            String query = "select m from Member m";
-            String query = "select m from Member m join fetch m.team";
-            List<Member> result = em.createQuery(query,Member.class)
-                            .getResultList();
-            for(Member member1 : result){
-                System.out.println("member = "+member1.getUsername()+","+member1.getTeam().getName());
-            }
+//            String query = "select m from Member m join fetch m.team";
+//            String query = "select t from Team t join fetch t.members";
+//            String query = "select distinct t from Team t join fetch t.members";
+//            List<Team> result = em.createQuery(query,Team.class)
+//                    .getResultList();
+//            for(Team team : result){
+//                System.out.println("member = "+team.getName()+", members = "+team.getMembers().size());
+//                for(Member member1 : team.getMembers()){
+//                    System.out.println("-> member = "+member1.getUsername());
+//                }
+//            }
+            //페치 조인 페이징 테스트
+            String query = "select t from Team t";
+//            String query = "select m from Member m join fetch m.team";
 
+            List<Team> result = em.createQuery(query,Team.class).
+                    setFirstResult(0)
+                    .setMaxResults(2)
+                    .getResultList();
+            for(Team team : result){
+                System.out.println("member = "+team.getName()+", members = "+team.getMembers().size());
+                for(Member member1 : team.getMembers()){
+                    System.out.println("-> member = "+member1.getUsername());
+                }
+            }
             tx.commit();
         }catch (Exception e){
             tx.rollback();
