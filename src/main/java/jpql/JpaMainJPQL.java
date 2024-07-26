@@ -159,19 +159,35 @@ public class JpaMainJPQL {
 //                }
 //            }
             //페치 조인 페이징 테스트
-            String query = "select t from Team t";
+//            String query = "select t from Team t";
 //            String query = "select m from Member m join fetch m.team";
 
-            List<Team> result = em.createQuery(query,Team.class).
-                    setFirstResult(0)
-                    .setMaxResults(2)
-                    .getResultList();
-            for(Team team : result){
-                System.out.println("member = "+team.getName()+", members = "+team.getMembers().size());
-                for(Member member1 : team.getMembers()){
-                    System.out.println("-> member = "+member1.getUsername());
-                }
-            }
+//            List<Team> result = em.createQuery(query,Team.class).
+//                    setFirstResult(0)
+//                    .setMaxResults(2)
+//                    .getResultList();
+//            for(Team team : result){
+//                System.out.println("member = "+team.getName()+", members = "+team.getMembers().size());
+//                for(Member member1 : team.getMembers()){
+//                    System.out.println("-> member = "+member1.getUsername());
+//                }
+//            }
+            //엔티티 직접 사용
+//            String query = "select m from Member m where m.id = :member";
+//            Member findMember = em.createQuery(query,Member.class)
+//                    .setParameter("member",member.getId())
+//                    .getSingleResult();
+//            System.out.println("findMember"+findMember);
+            //named query
+//            List<Member> resultList = em.createNamedQuery("Member.findByUsername",Member.class)
+//                            .setParameter("username","회원1")
+//                            .getResultList();
+//            for (Member member1 : resultList) {
+//                System.out.println("member="+member1);
+//            }
+            int resultCount = em.createQuery("update Member m set m.age = 20")
+                            .executeUpdate();
+            System.out.println("result = "+resultCount);
             tx.commit();
         }catch (Exception e){
             tx.rollback();
